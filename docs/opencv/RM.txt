@@ -1,0 +1,7 @@
+opencv
+
+main cods
+ch1 slideshow.py
+ch2 video_effect.py
+ch3 chroma_key / backproj / camera's
+ch4 all file's important

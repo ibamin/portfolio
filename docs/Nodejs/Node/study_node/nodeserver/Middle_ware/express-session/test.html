@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client-side Cookies</title>
+</head>
+<body>
+    <button onclick="setCookie()">Set Cookie</button>
+    <button onclick="readCookie()">Read Cookie</button>
+    
+    <script>
+        function setCookie() {
+            // ÄíÅ° ¼³Á¤
+            fetch("http://localhost:3000/")
+            .then((response)=>response.json())
+            .then((json)=>document.cookie=json)
+            alert("Cookie set!");
+        }
+
+        function readCookie() {
+            // ÄíÅ° ÀÐ±â
+            const cookies = document.cookie;
+            alert(`Cookies: ${cookies}`);
+        }
+    </script>
+</body>
+</html>

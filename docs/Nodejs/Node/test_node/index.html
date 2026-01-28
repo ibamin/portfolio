@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Socket.io Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="/socket.io/socket.io.js"></script>                                                                                 <!-- socket.io »ç¿ë -->
+  <script src="//code.jquery.com/jquery-1.11.1.js"></script> 
+  <script>
+    const socket = io()
+
+    socket.on('message', (data) => {
+        const output = document.getElementById("message-output")
+        console.log('Received message:', data)
+        output.value = data
+      })
+
+    function sendMessage() {
+      const input = document.getElementById("message-input")
+      const message = input.value
+      socket.emit('data', message)
+      input.value = ''
+    }
+  </script>
+</head>
+<body>
+    <input type="text" id="message-input">
+    <button onclick="sendMessage()">send</button>
+    <input type="text" id="message-output">
+</body>

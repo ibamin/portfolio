@@ -1,0 +1,834 @@
+<html>
+<head>
+<title>야추 게임</title>
+<style>
+    /* 요소를 배치하기 위한 기본적인 스타일을 추가합니다. */
+    .container {
+        width: 20%;
+        float: left;
+    }
+
+    .score-board {
+        float: left;
+    }
+
+    .game-board {
+        float: left;
+    }
+    /* 사각형 테두리 스타일 */
+        .rectangle {
+            width: 500px; /* 테두리의 가로 길이 */
+            height: 500px; /* 테두리의 세로 길이 */
+            border: 2px solid #000; /* 테두리 스타일 및 색상 설정 */
+            padding: 20px; /* 테두리 내부 여백 */
+            display: flex; /* 내부 요소를 가로로 나란히 배치하기 위해 Flexbox 사용 */
+            flex-direction: row; /* 내부 요소를 수직으로 배치 */
+            justify-content: center; /* 수직 가운데 정렬 */
+            align-items: center; /* 수평 가운데 정렬 */
+        }
+        .rectangle button {
+            display: block;
+            margin: 10px 0; /* 버튼 간격 조정 */
+            width: 100%; /* 버튼 너비를 테두리의 가로 길이와 같게 설정 */
+            padding: 10px; /* 버튼 내부 여백 */
+            background-color: #007bff; /* 버튼 배경색 설정 */
+            color: #fff; /* 버튼 글자색 설정 */
+            border: none; /* 버튼 테두리 제거 */
+            cursor: pointer; /* 커서 스타일 변경 */
+        }
+
+        /* 버튼 호버 효과 */
+        .rectangle button:hover {
+            background-color: #0056b3; 
+        }
+        /* 세로선 */
+        .updown {
+            border: 5px solid black;
+            width: 0.1px;
+            height: 50px;
+        }
+</style>
+<script src="https://unpkg.com/htmx.org@1.6.0/dist/htmx.js"></script>
+</head>
+<body>
+<span class="container">
+    <div class="score-board">
+        <form name="score_bord" method="POST">
+        <p>1P</p>
+        <input type="text" value="One" disabled="true"> <input type="button" name="1p_one_value" value="0" > <br>
+        <input type="text" value="Two" disabled> <input type="button" name="1p_two_value" value="0"> <br>
+        <input type="text" value="Three" disabled> <input type="button" name="1p_three_value" value="0"> <br>
+        <input type="text" value="four" disabled> <input type="button" name="1p_four_value" value="0"> <br>
+        <input type="text" value="five" disabled> <input type="button" name="1p_five_value" value="0"> <br>
+        <input type="text" value="six" disabled> <input type="button" name="1p_six_value" value="0"> <br>
+        <input type="text" value="bonus" disabled> <input type="button" name="1p_bonus" value="0"> <br>
+        <hr>
+        <input type="text" value="Three-of-A-Kind" disabled> <input type="button" name="1p_three_of_a_kind_value" value="0"> <br>
+        <input type="text" value="Four-of-A-Kind" disabled> <input type="button" name="1p_four_of_a_kind_value" value="0"> <br>
+        <input type="text" value="Full-House" disabled> <input type="button" name="1p_full_house_value" value="0"> <br>
+        <input type="text" value="small-straight" disabled> <input type="button" name="1p_small-straight" value="0"> <br>
+        <input type="text" value="large-straight" disabled> <input type="button" name="1p_large-straight" value="0"> <br>
+        <input type="text" value="chance" disabled> <input type="button" name="1p_chance" value="0"> <br>
+        <input type="text" value="yachu" disabled> <input type="button" name="1p_yachu" value="0"> <br><br>
+        <input type="text" value="total" disabled> <input type="text" name="1p_total" value="0">
+        </form>
+    </div>
+    
+</span>
+<span>
+<div class="v-line">
+</div>
+</span>
+<span class="container">
+    <div class="score-board">
+        <form name="score_bord" method="POST">
+        <p>2P</p>
+        <input type="text" value="One" disabled="true"> <input type="button" name="2p_one_value" value="0" > <br>
+        <input type="text" value="Two" disabled> <input type="button" name="2p_two_value" value="0"> <br>
+        <input type="text" value="Three" disabled> <input type="button" name="2p_three_value" value="0"> <br>
+        <input type="text" value="four" disabled> <input type="button" name="2p_four_value" value="0"> <br>
+        <input type="text" value="five" disabled> <input type="button" name="2p_five_value" value="0"> <br>
+        <input type="text" value="six" disabled> <input type="button" name="2p_six_value" value="0"> <br>
+        <input type="text" value="bonus" disabled> <input type="button" name="2p_bonus" value="0"> <br>
+        <hr>
+        <input type="text" value="Three-of-A-Kind" disabled> <input type="button" name="2p_three_of_a_kind_value" value="0"> <br>
+        <input type="text" value="Four-of-A-Kind" disabled> <input type="button" name="2p_four_of_a_kind_value" value="0"> <br>
+        <input type="text" value="Full-House" disabled> <input type="button" name="2p_full_house_value" value="0"> <br>
+        <input type="text" value="small-straight" disabled> <input type="button" name="2p_small-straight" value="0"> <br>
+        <input type="text" value="large-straight" disabled> <input type="button" name="2p_large-straight" value="0"> <br>
+        <input type="text" value="chance" disabled> <input type="button" name="2p_chance" value="0"> <br>
+        <input type="text" value="yachu" disabled> <input type="button" name="2p_yachu" value="0"> <br><br>
+        <input type="text" value="total" disabled> <input type="text" name="2p_total" value="0">
+        </form>
+        
+    </div>
+    
+</span>
+<button><img name="dice1_img" src="" alt="주사위 1 이미지" width="130" height="130"></img></button>
+<button><img name="dice2_img" src="" alt="주사위 2 이미지" width="130" height="130"></img></button>
+<button><img name="dice3_img" src="" alt="주사위 3 이미지" width="130" height="130"></img></button>
+<button><img name="dice4_img" src="" alt="주사위 4 이미지" width="130" height="130"></img></button>
+<button><img name="dice5_img" src="" alt="주사위 5 이미지" width="130" height="130"></img></button>
+<br>
+<div class="game-board">
+   <form name="game_bord" method="POST">
+        <!-- 게임 보드 내용을 여기에 추가합니다. -->
+        <div class="rectangle">
+        <input type="button" id="dice1" name="dice1" value=1>
+        &nbsp &nbsp
+        <input type="button" id="dice2" name="dice2" value=1>
+        &nbsp &nbsp
+        <input type="button" id="dice3" name="dice3" value=1>
+        &nbsp &nbsp
+        <input type="button" id="dice4" name="dice4" value=1>
+        &nbsp &nbsp
+        <input type="button" id="dice5" name="dice5" value=1>
+        </div>
+   </form>
+<button value="주사위 돌리기" name="shake" > </button>
+</div>
+</body>
+<script>
+    // NodeList를 배열로 변환하는 함수
+    function convertNodeListToArray(nodeList) {
+        return Array.from(nodeList);
+    }
+    
+    var dices = [];
+    
+    // 주사위 버튼 엘리먼트를 가져오고 NodeList를 배열로 변환합니다.
+    var dice1Elements = convertNodeListToArray(document.getElementsByName("dice1"));
+    var dice2Elements = convertNodeListToArray(document.getElementsByName("dice2"));
+    var dice3Elements = convertNodeListToArray(document.getElementsByName("dice3"));
+    var dice4Elements = convertNodeListToArray(document.getElementsByName("dice4"));
+    var dice5Elements = convertNodeListToArray(document.getElementsByName("dice5"));
+    
+    dices.push(dice1Elements);
+    dices.push(dice2Elements);
+    dices.push(dice3Elements);
+    dices.push(dice4Elements);
+    dices.push(dice5Elements);
+    
+    var dice_change=[true,true,true,true,true]
+    
+    
+        function updateDiceValues(dices) {
+            for (let i = 0; i < dices.length; i++) {
+                if (dice_change[i]) {
+                    document.getElementById(`dice${i + 1}`).value = dices[i].toString();
+                }
+            }
+        }
+        
+        //dice
+        document.getElementsByName("shake")[0].addEventListener("click", function () {
+
+            console.log("shake in")
+
+            fetch("/shake", {
+                method: "GET"
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                const newDices = data.dices;
+                updateDiceValues(newDices);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+
+    
+        document.getElementsByName("dice1")[0].addEventListener("click", function () {
+            var dice1 = document.getElementsByName("dice1")[0];
+            dice1.disabled = true;
+            dice_change[0]=false;
+            var dice1_img = document.getElementsByName("dice1_img")[0];
+            dice1_img.src = "../static/" + dice1.value + ".png";
+        });
+        
+        document.getElementsByName("dice2")[0].addEventListener("click", function () {
+            var dice2 = document.getElementsByName("dice2")[0];
+            dice2.disabled = true;
+            dice_change[1]=false;
+            var dice2_img = document.getElementsByName("dice2_img")[0];
+            dice2_img.src = "../static/" + dice2.value + ".png";
+        });
+        
+        document.getElementsByName("dice3")[0].addEventListener("click", function () {
+            var dice3 = document.getElementsByName("dice3")[0];
+            dice3.disabled = true;
+            dice_change[2]=false;
+            var dice3_img = document.getElementsByName("dice3_img")[0];
+            dice3_img.src = "../static/" + dice3.value + ".png";
+        });
+        
+        document.getElementsByName("dice4")[0].addEventListener("click", function () {
+            var dice4 = document.getElementsByName("dice4")[0];
+            dice4.disabled = true;
+            dice_change[3]=false;
+            var dice4_img = document.getElementsByName("dice4_img")[0];
+            dice4_img.src = "../static/" + dice4.value + ".png";
+        });
+        
+        document.getElementsByName("dice5")[0].addEventListener("click", function () {
+            var dice5 = document.getElementsByName("dice5")[0];
+            dice5.disabled = true;
+            dice_change[4]=false;
+            var dice5_img = document.getElementsByName("dice5_img")[0];
+            dice5_img.src = "../static/" + dice5.value + ".png";
+        });
+        
+        document.getElementsByName("dice1_img")[0].addEventListener("click",function(){
+            var dice1 = document.getElementsByName("dice1")[0];
+            dice1.disabled = false;
+            dice_change[0]=true;
+        })
+        document.getElementsByName("dice2_img")[0].addEventListener("click",function(){
+            var dice2 = document.getElementsByName("dice2")[0];
+            dice2.disabled = false;
+            dice_change[1]=true;
+        })
+        document.getElementsByName("dice3_img")[0].addEventListener("click",function(){
+            var dice1 = document.getElementsByName("dice3")[0];
+            dice3.disabled = false;
+            dice_change[2]=true;
+        })
+        document.getElementsByName("dice4_img")[0].addEventListener("click",function(){
+            var dice1 = document.getElementsByName("dice4")[0];
+            dice4.disabled = false;
+            dice_change[3]=true;
+        })
+        document.getElementsByName("dice5_img")[0].addEventListener("click",function(){
+            var dice1 = document.getElementsByName("dice5")[0];
+            dice5.disabled = false;
+            dice_change[4]=true;
+        })
+    //1p
+    document.getElementsByName("1p_one_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "1") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("1p_total")[0].value)+cnt;
+       
+        document.getElementsByName("1p_one_value")[0].value = cnt;
+        document.getElementsByName("1p_total")[0].value =result;
+        document.getElementsByName("1p_one_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 2인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("1p_two_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "2") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("1p_total")[0].value)+(cnt*2);
+       
+        document.getElementsByName("1p_two_value")[0].value = cnt*2;
+        document.getElementsByName("1p_total")[0].value =result;
+        document.getElementsByName("1p_two_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 3인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("1p_three_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "3") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("1p_total")[0].value)+(cnt*3);
+       
+        document.getElementsByName("1p_three_value")[0].value = cnt*3;
+        document.getElementsByName("1p_total")[0].value =result;
+        document.getElementsByName("1p_three_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 3인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("1p_four_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "4") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("1p_total")[0].value)+(cnt*4);
+       
+        document.getElementsByName("1p_four_value")[0].value = cnt*4;
+        document.getElementsByName("1p_total")[0].value =result;
+        document.getElementsByName("1p_four_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 3인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("1p_five_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "5") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("1p_total")[0].value)+(cnt*5);
+       
+        document.getElementsByName("1p_five_value")[0].value = cnt*5;
+        document.getElementsByName("1p_total")[0].value =result;
+        document.getElementsByName("1p_five_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 3인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("1p_six_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "6") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("1p_total")[0].value)+(cnt*6);
+       
+        document.getElementsByName("1p_six_value")[0].value = cnt*6;
+        document.getElementsByName("1p_total")[0].value =result;
+        document.getElementsByName("1p_six_value")[0].disabled = true;
+    });
+    document.getElementsByName("1p_three_of_a_kind_value")[0].addEventListener("click", function () {
+        var sum = 0;
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+    
+        // 주사위 값 카운트
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+                sum += value;
+            }
+        }
+    
+        // Three-of-a-Kind 조건 확인
+        var score = 0;
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] >= 3) { // 3개 이상의 주사위 값이 있으면 Three-of-a-Kind 조건을 만족합니다.
+                score = sum; // 주사위 합계가 Three-of-a-Kind 점수가 됩니다.
+                break;
+            }
+        }
+    
+        var result = parseInt(document.getElementsByName("1p_total")[0].value) + score;
+    
+        document.getElementsByName("1p_three_of_a_kind_value")[0].value = score;
+        document.getElementsByName("1p_total")[0].value = result;
+        document.getElementsByName("1p_three_of_a_kind_value")[0].disabled = true;
+    });
+    document.getElementsByName("1p_four_of_a_kind_value")[0].addEventListener("click", function () {
+        var sum = 0;
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+    
+        // 주사위 값 카운트
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+                sum += value;
+            }
+        }
+    
+        // Three-of-a-Kind 조건 확인
+        var score = 0;
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] >= 4) { // 3개 이상의 주사위 값이 있으면 Three-of-a-Kind 조건을 만족합니다.
+                score = sum; // 주사위 합계가 Three-of-a-Kind 점수가 됩니다.
+                break;
+            }
+        }
+    
+        var result = parseInt(document.getElementsByName("1p_total")[0].value) + score;
+    
+        document.getElementsByName("1p_four_of_a_kind_value")[0].value = score;
+        document.getElementsByName("1p_total")[0].value = result;
+        document.getElementsByName("1p_four_of_a_kind_value")[0].disabled = true;
+    });
+    document.getElementsByName("1p_full_house_value")[0].addEventListener("click", function () {
+        var three = false;
+        var two = false;
+        var score = 0;
+        var sum=0
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+        
+        for (var i = 0; i < dices.length; i++) {
+       
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+                sum += value;
+                
+            }
+        }
+     
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] == "3") { // Three-of-a-Kind 확인
+                three = true;
+            }
+            if (counts[i] == "2") { // Two-of-a-Kind 확인
+                two = true;
+            }
+        }
+    
+        if (three && two) { // Full-House 조건 확인
+            score = 25;
+        }
+    
+        var result = parseInt(document.getElementsByName("1p_total")[0].value) + score;
+    
+        document.getElementsByName("1p_full_house_value")[0].value = score;
+        document.getElementsByName("1p_total")[0].value = result;
+        document.getElementsByName("1p_full_house_value")[0].disabled = true;
+    });    
+    document.getElementsByName("1p_small-straight")[0].addEventListener("click", function () {
+        var score = 0;
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+    
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+            }
+        }
+    
+        var find_cnt = 0;
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] > 0) {
+                find_cnt++;
+            } else {
+                find_cnt = 0;
+            }
+    
+            if (find_cnt == 4) { // 주사위 눈이 연속적인 경우
+                score = 30;
+                break;
+            }
+        }
+    
+        var result = parseInt(document.getElementsByName("1p_total")[0].value) + score;
+    
+        document.getElementsByName("1p_small-straight")[0].value = score;
+        document.getElementsByName("1p_total")[0].value = result;
+        document.getElementsByName("1p_small-straight")[0].disabled = true;
+    });
+    document.getElementsByName("1p_large-straight")[0].addEventListener("click", function () {
+        var score = 0;
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+    
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+            }
+        }
+    
+        var find_cnt = 0;
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] > 0) {
+                find_cnt++;
+            } else {
+                find_cnt = 0;
+            }
+    
+            if (find_cnt == 5) { // 주사위 눈이 연속적인 경우
+                score = 40;
+                break;
+            }
+        }
+    
+        var result = parseInt(document.getElementsByName("1p_total")[0].value) + score;
+    
+        document.getElementsByName("1p_large-straight")[0].value = score;
+        document.getElementsByName("1p_total")[0].value = result;
+        document.getElementsByName("1p_large-straight")[0].disabled = true;
+    });
+    document.getElementsByName("1p_chance")[0].addEventListener("click", function () {
+        var score=0
+    
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                score+=value;
+            }
+        }
+        
+        var result = parseInt(document.getElementsByName("1p_total")[0].value) + score;
+    
+        document.getElementsByName("1p_chance")[0].value = score;
+        document.getElementsByName("1p_total")[0].value = result;
+        document.getElementsByName("1p_chance")[0].disabled = true;
+    });
+    document.getElementsByName("1p_yachu")[0].addEventListener("click", function () {
+        var yach=false;
+        var score=0;
+        var sum=0;
+        var counts = [0, 0, 0, 0, 0, 0];
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++;
+                sum += value;
+            }
+        }
+
+        for(var i=0;i<counts.length;i++){
+            if (counts[i]==5){
+                yach=true;
+            }
+        }
+  
+        if(yach) { score=50; }
+
+        var result = parseInt(document.getElementsByName("1p_total")[0].value) + score;
+    
+        document.getElementsByName("1p_yachu")[0].value = score;
+        document.getElementsByName("1p_total")[0].value = result;
+        document.getElementsByName("1p_yachu")[0].disabled = true;
+    });
+    document.getElementsByName("2p_one_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "1") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("2p_total")[0].value)+cnt;
+       
+        document.getElementsByName("2p_one_value")[0].value = cnt;
+        document.getElementsByName("2p_total")[0].value =result;
+        document.getElementsByName("2p_one_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 2인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("2p_two_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "2") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("2p_total")[0].value)+(cnt*2);
+       
+        document.getElementsByName("2p_two_value")[0].value = cnt*2;
+        document.getElementsByName("2p_total")[0].value =result;
+        document.getElementsByName("2p_two_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 3인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("2p_three_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "3") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("2p_total")[0].value)+(cnt*3);
+       
+        document.getElementsByName("2p_three_value")[0].value = cnt*3;
+        document.getElementsByName("2p_total")[0].value =result;
+        document.getElementsByName("2p_three_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 3인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("2p_four_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "4") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("2p_total")[0].value)+(cnt*4);
+       
+        document.getElementsByName("2p_four_value")[0].value = cnt*4;
+        document.getElementsByName("2p_total")[0].value =result;
+        document.getElementsByName("2p_four_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 3인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("2p_five_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "5") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("2p_total")[0].value)+(cnt*5);
+       
+        document.getElementsByName("2p_five_value")[0].value = cnt*5;
+        document.getElementsByName("2p_total")[0].value =result;
+        document.getElementsByName("2p_five_value")[0].disabled = true;
+    });
+    // "One" 버튼 클릭 시 주사위 값이 3인 것의 개수를 계산하고 버튼에 설정합니다.
+    document.getElementsByName("2p_six_value")[0].addEventListener("click", function () {
+        var cnt = 0;
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                if (dices[i][j].value == "6") {
+                    cnt++;
+                }
+            }
+        }
+        var result = parseInt(document.getElementsByName("2p_total")[0].value)+(cnt*6);
+       
+        document.getElementsByName("2p_six_value")[0].value = cnt*6;
+        document.getElementsByName("2p_total")[0].value =result;
+        document.getElementsByName("2p_six_value")[0].disabled = true;
+    });
+    document.getElementsByName("2p_three_of_a_kind_value")[0].addEventListener("click", function () {
+        var sum = 0;
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+    
+        // 주사위 값 카운트
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+                sum += value;
+            }
+        }
+    
+        // Three-of-a-Kind 조건 확인
+        var score = 0;
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] >= 3) { // 3개 이상의 주사위 값이 있으면 Three-of-a-Kind 조건을 만족합니다.
+                score = sum; // 주사위 합계가 Three-of-a-Kind 점수가 됩니다.
+                break;
+            }
+        }
+    
+        var result = parseInt(document.getElementsByName("2p_total")[0].value) + score;
+    
+        document.getElementsByName("2p_three_of_a_kind_value")[0].value = score;
+        document.getElementsByName("2p_total")[0].value = result;
+        document.getElementsByName("2p_three_of_a_kind_value")[0].disabled = true;
+    });
+    document.getElementsByName("2p_four_of_a_kind_value")[0].addEventListener("click", function () {
+        var sum = 0;
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+    
+        // 주사위 값 카운트
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+                sum += value;
+            }
+        }
+    
+        // Three-of-a-Kind 조건 확인
+        var score = 0;
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] >= 4) { // 3개 이상의 주사위 값이 있으면 Three-of-a-Kind 조건을 만족합니다.
+                score = sum; // 주사위 합계가 Three-of-a-Kind 점수가 됩니다.
+                break;
+            }
+        }
+    
+        var result = parseInt(document.getElementsByName("2p_total")[0].value) + score;
+    
+        document.getElementsByName("2p_four_of_a_kind_value")[0].value = score;
+        document.getElementsByName("2p_total")[0].value = result;
+        document.getElementsByName("2p_four_of_a_kind_value")[0].disabled = true;
+    });
+    document.getElementsByName("2p_full_house_value")[0].addEventListener("click", function () {
+        var three = false;
+        var two = false;
+        var score = 0;
+        var sum=0
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+        
+        for (var i = 0; i < dices.length; i++) {
+       
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+                sum += value;
+                
+            }
+        }
+     
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] == "3") { // Three-of-a-Kind 확인
+                three = true;
+            }
+            if (counts[i] == "2") { // Two-of-a-Kind 확인
+                two = true;
+            }
+        }
+    
+        if (three && two) { // Full-House 조건 확인
+            score = 25;
+        }
+    
+        var result = parseInt(document.getElementsByName("2p_total")[0].value) + score;
+    
+        document.getElementsByName("2p_full_house_value")[0].value = score;
+        document.getElementsByName("2p_total")[0].value = result;
+        document.getElementsByName("2p_full_house_value")[0].disabled = true;
+    });    
+    document.getElementsByName("2p_small-straight")[0].addEventListener("click", function () {
+        var score = 0;
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+    
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+            }
+        }
+    
+        var find_cnt = 0;
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] > 0) {
+                find_cnt++;
+            } else {
+                find_cnt = 0;
+            }
+    
+            if (find_cnt == 4) { // 주사위 눈이 연속적인 경우
+                score = 30;
+                break;
+            }
+        }
+    
+        var result = parseInt(document.getElementsByName("2p_total")[0].value) + score;
+    
+        document.getElementsByName("2p_small-straight")[0].value = score;
+        document.getElementsByName("2p_total")[0].value = result;
+        document.getElementsByName("2p_small-straight")[0].disabled = true;
+    });
+    document.getElementsByName("2p_large-straight")[0].addEventListener("click", function () {
+        var score = 0;
+        var counts = [0, 0, 0, 0, 0, 0]; // 주사위 눈의 개수를 저장할 배열
+    
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++; // 주사위 값은 1부터 6까지이므로 인덱스는 0부터 시작하므로 1을 빼줍니다.
+            }
+        }
+    
+        var find_cnt = 0;
+        for (var i = 0; i < counts.length; i++) {
+            if (counts[i] > 0) {
+                find_cnt++;
+            } else {
+                find_cnt = 0;
+            }
+    
+            if (find_cnt == 5) { // 주사위 눈이 연속적인 경우
+                score = 40;
+                break;
+            }
+        }
+    
+        var result = parseInt(document.getElementsByName("2p_total")[0].value) + score;
+    
+        document.getElementsByName("2p_large-straight")[0].value = score;
+        document.getElementsByName("2p_total")[0].value = result;
+        document.getElementsByName("2p_large-straight")[0].disabled = true;
+    });
+    document.getElementsByName("2p_chance")[0].addEventListener("click", function () {
+        var score=0
+    
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                score+=value;
+            }
+        }
+        
+        var result = parseInt(document.getElementsByName("2p_total")[0].value) + score;
+    
+        document.getElementsByName("2p_chance")[0].value = score;
+        document.getElementsByName("2p_total")[0].value = result;
+        document.getElementsByName("2p_chance")[0].disabled = true;
+    });
+    document.getElementsByName("2p_yachu")[0].addEventListener("click", function () {
+        var yach=false;
+        var score=0;
+        var sum=0;
+        var counts = [0, 0, 0, 0, 0, 0];
+        for (var i = 0; i < dices.length; i++) {
+            for (var j = 0; j < dices[i].length; j++) {
+                var value = parseInt(dices[i][j].value);
+                counts[value - 1]++;
+                sum += value;
+            }
+        }
+
+        for(var i=0;i<counts.length;i++){
+            if (counts[i]==5){
+                yach=true;
+            }
+        }
+  
+        if(yach) { score=50; }
+
+        var result = parseInt(document.getElementsByName("2p_total")[0].value) + score;
+    
+        document.getElementsByName("2p_yachu")[0].value = score;
+        document.getElementsByName("2p_total")[0].value = result;
+        document.getElementsByName("2p_yachu")[0].disabled = true;
+    });
+</script>
+</html>

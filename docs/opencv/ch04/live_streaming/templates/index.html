@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Streaming</title>
+</head>
+<body>
+    <h1>Live Video Streaming</h1>
+    <img src="{{ url_for('video_feed') }}" id="video-feed" alt="Live Video">
+    
+    <div id="chat-box">
+        <h2>Chat</h2>
+        <div id="chat-messages"></div>
+        <input type="text" id="chat-input" placeholder="Type a message...">
+        <button id="send-button">Send</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script>
+        const socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        socket.on('chat', function(data) {
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.innerHTML += '<p>' + data + '</p>';
+        });
+
+        document.getElementById('send-button').addEventListener('click', function() {
+            const chatInput = document.getElementById('chat-input');
+            const message = chatInput.value;
+            chatInput.value = '';
+            socket.emit('message', message);
+        });
+
+        document.getElementById('chat-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const chatInput = document.getElementById('chat-input');
+                const message = chatInput.value;
+                chatInput.value = '';
+                socket.emit('message', message);
+            }
+        });
+    </script>
+</body>
+</html>
