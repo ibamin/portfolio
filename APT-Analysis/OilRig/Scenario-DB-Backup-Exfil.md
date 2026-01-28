@@ -20,6 +20,17 @@ OilRig 그룹 내부 관계 기반 침투 후 DB 백업 파일을 탈취하는 �
 - **Discovery**: DB 서버 Backup 파일 탐색
 - **Exfiltration**: Windows Exchange API 기반 유출
 
+## MITRE ATT&CK 매핑 (요약)
+| Tactic | Technique |
+| --- | --- |
+| Initial Access | T1566.001 Spearphishing Attachment; T1204.002 User Execution: Malicious File |
+| Discovery | T1012 Query Registry; T1083 File and Directory Discovery |
+| Credential Access | T1555.004 Credentials from Password Stores: Windows Credential Manager; T1003.001 OS Credential Dumping: LSASS Memory |
+| Credential Access | T1110 Brute Force (Password Cracking) |
+| Lateral Movement | T1021.001 Remote Services: RDP; T1505.003 Server Software Component: Web Shell |
+| Persistence | T1572 Protocol Tunneling (Port Forwarding) |
+| Exfiltration | T1048 Exfiltration Over Alternative Protocol |
+
 ## 시뮬레이션 관점 포인트
 - 자격증명 저장/관리 경로에 대한 탐지 로직
 - LSASS 덤프 및 WebShell 행위 감지 시그널

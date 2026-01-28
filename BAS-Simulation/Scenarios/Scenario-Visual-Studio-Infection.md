@@ -20,6 +20,18 @@
 - **Discovery**: 내부망 타겟 여부 판단 정보 수집
 - **Impact**: 랜섬웨어 단계 시뮬레이션
 
+## MITRE ATT&CK 매핑 (요약)
+| Tactic | Technique |
+| --- | --- |
+| Execution | T1204.002 User Execution: Malicious File |
+| Discovery | T1016 System Network Configuration Discovery; T1046 Network Service Discovery |
+| Privilege Escalation | T1068 Exploitation for Privilege Escalation |
+| Credential Access | T1003.001 OS Credential Dumping: LSASS Memory; T1555.003 Credentials from Password Stores: Web Browsers |
+| Exfiltration | T1048 Exfiltration Over Alternative Protocol |
+| Defense Evasion | T1055 Process Injection |
+| Persistence | T1547.001 Registry Run Keys/Startup Folder |
+| Impact | T1486 Data Encrypted for Impact |
+
 ## 시뮬레이션 관점 포인트
 - 개발자 환경(IDE/Build 경로) 기반 초기 감염 탐지
 - 권한 상승 및 Mimikatz 행위 탐지
