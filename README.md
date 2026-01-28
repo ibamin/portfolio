@@ -19,6 +19,16 @@ APT 공격 시나리오 분석/자동화, 1-Day 취약점 PoC 검증 및 리팩�
 
 ---
 
+## Portfolio (Notion Export 기반)
+
+Notion 포트폴리오 PDF 내보내기 데이터를 기준으로 프로젝트/스킬/CVE 리포트를 정리했습니다.
+
+- [Projects](Portfolio/Projects.md)
+- [Skills](Portfolio/Skills.md)
+- [CVE Highlights](Portfolio/CVE-Highlights.md)
+
+---
+
 ## What I Focus On
 
 ### APT Analysis
@@ -54,6 +64,8 @@ APT 공격 시나리오 분석/자동화, 1-Day 취약점 PoC 검증 및 리팩�
 
 ```text
 portfolio-root
+├─ About               # 이력/경력/자기소개
+├─ Portfolio           # Notion export 기반 요약
 ├─ APT-Analysis        # APT 그룹별 분석 및 캠페인 정리
 ├─ BAS-Simulation      # 공격 시나리오 기반 시뮬레이션
 ├─ CVE-Research        # 취약점 분석 및 방어 관점 문서
