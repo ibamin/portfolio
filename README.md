@@ -1,39 +1,52 @@
-# Security Research & Defense Portfolio
+﻿# Security Research & Defense Portfolio
 
-APT 분석, 취약점 리서치, BAS(Breach & Attack Simulation)를 통해  
-**공격을 이해하고 시연하여 방어 가능한 보안 자산으로 전환하는 것**에 집중하는  
-보안 엔지니어의 연구 및 실무 포트폴리오입니다.
+APT 분석, 취약점 리서치, BAS(Breach & Attack Simulation) 기반 시나리오를 통해  
+**공격을 이해하고 재현하여 방어 가능한 보안 자산으로 전환**하는 것을 목표로 합니다.
 
 ---
 
-## About This Portfolio
+## About (Summary)
 
-이 저장소는 단순한 코드 모음이 아니라, 다음 질문에 답하기 위해 정리된 포트폴리오입니다.
+**노경록 | Security Threat Analyst**  
+APT 공격 시나리오 분석 및 자동화, 1-Day 취약점 PoC 분석/리팩토링, CIS Benchmark 점검 자동화를 수행해왔습니다.  
+실제 환경에서 재현 가능한 시뮬레이션 자산을 구축하고, 공격 흐름을 방어 관점으로 전환하는 문서화에 집중합니다.
 
-- 실제 APT 공격자는 어떤 흐름으로 침투하는가?
-- 해당 공격은 **어디에서 탐지 가능했는가?**
-- 취약점과 공격 기법을 **보안 점검 또는 시뮬레이션 자산으로 어떻게 전환할 수 있는가?**
+- **현 직장**: 쏘마(Somma) RedBlue 연구원 (2024.01 ~ 재직 중)
+- **핵심 역량**: APT 시나리오 자산화, PoC 검증/자동화, BAS 시뮬레이션 설계
+- **관심 분야**: Offensive Security, 공격 시뮬레이션, 탐지/대응 연계
 
-모든 문서는 **분석 → 공격 흐름 이해 → 시뮬레이션 → 방어/탐지 관점 정리**를 기준으로 작성되었습니다.
+자세한 이력과 경력 요약은 `About` 섹션에서 확인할 수 있습니다.
 
 ---
 
 ## What I Focus On
 
-### 🔍 APT Analysis
-- Lazarus, Kimsuky, Andariel 등 실제 위협 그룹 분석
-- MITRE ATT&CK 기반 TTP 구조화
-- 단일 공격이 아닌 **캠페인 단위의 침해 흐름 분석**
+### APT Analysis
+- Lazarus, Kimsuky, Andariel, OilRig 등 APT 그룹 분석
+- MITRE ATT&CK 기반 TTP 정리
+- 단발 공격이 아니라 **캠페인 시나리오 관점**으로 분석
 
-### 🧪 BAS (Breach & Attack Simulation)
-- APT 및 취약점 기반 공격 시나리오 시뮬레이션
-- 방어 관점에서 재현 가능한 테스트 시나리오 설계
-- 점검 자동화 및 재현성 확보에 중점
+### BAS (Breach & Attack Simulation)
+- APT/취약점 기반 공격 시나리오 설계
+- 방어 관점에서 재현 가능한 테스트 시나리오 구축
+- 자동화 스크립트 및 실행 파일 형태의 자산화
 
-### 🛠 Vulnerability Research
-- 공개 취약점 및 1-day 분석
-- PoC 공유만이 아닌 **Root Cause / Attack Flow / Simulation / Mitigation / Detection** 중심 문서화
-- 취약점을 실제 보안 점검 자산으로 전환하는 과정에 초점
+### Vulnerability Research
+- 1-Day 취약점 분석/PoC 검증
+- Root Cause / Attack Flow / Simulation / Mitigation / Detection 중심 문서화
+- 취약점을 보안 점검/시뮬레이션 자산으로 전환
+
+---
+
+## Featured Scenarios
+
+### APT-Analysis
+- [OilRig DB 백업 유출 시나리오](/APT-Analysis/OilRig/Scenario-DB-Backup-Exfil.md)
+- [Lazarus 도메인 정책 기반 인프라 장악 시나리오](/APT-Analysis/Lazarus/Scenario-Domain-Policy-PMS.md)
+
+### BAS-Simulation
+- [Visual Studio 취약점 기반 개발 인프라 감염 시나리오](/BAS-Simulation/Scenarios/Scenario-Visual-Studio-Infection.md)
+- [CIS Benchmark 점검 시나리오](/BAS-Simulation/Scenarios/Scenario-CIS-Benchmark-Audit.md)
 
 ---
 
@@ -45,4 +58,5 @@ portfolio-root
 ├─ BAS-Simulation      # 공격 시나리오 기반 시뮬레이션
 ├─ CVE-Research        # 취약점 분석 및 방어 관점 문서
 ├─ Tools               # 분석/자동화를 위한 보조 도구
-└─ docs                # 포트폴리오 정책 및 공통 문서
+└─ docs                # 학습/기록 문서
+```

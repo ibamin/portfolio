@@ -1,8 +1,7 @@
 ﻿# BAS-Simulation
 
-BAS 및 C2 프레임워크 관련 자료를 정리했습니다.
+BAS 기반 공격 시나리오 및 자동화 자산을 정리합니다.
 
-## C2 Frameworks
-- [Havoc](/BAS-Simulation/C2_Framework/Havoc/README.md)
-- [Sliver](/BAS-Simulation/C2_Framework/Sliver/README.md)
-- [My_Rat](/BAS-Simulation/C2_Framework/My_Rat/README.md)
+## Scenarios
+- [Visual Studio 취약점 기반 개발 인프라 감염 시나리오](/BAS-Simulation/Scenarios/Scenario-Visual-Studio-Infection.md)
+- [CIS Benchmark 점검 시나리오](/BAS-Simulation/Scenarios/Scenario-CIS-Benchmark-Audit.md)
