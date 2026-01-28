@@ -11,7 +11,7 @@
 - **Discovery**: DB 서버 Backup 파일 탐색
 - **Exfiltration**: Windows Exchange API 기반 유출
 
-## 주요 프로젝트 2 — Lazarus 그룹정책/ P̲M̲S̲ 기반 인프라 장악 시나리오
+## 주요 프로젝트 2 — Lazarus 그룹정책 / PMS 기반 인프라 장악 시나리오
 **목표**: 도메인 정책을 통한 인프라 장악 시나리오 설계
 - **Initial Access**: Spear phishing 악성 .docm 실행
 - **Discovery**: Credentials 경로 기반 RDP 자격증명 존재 여부 확인

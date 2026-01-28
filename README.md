@@ -1,6 +1,6 @@
 ﻿# Security Research & Defense Portfolio
 
-APT 분석, 취약점 리서치, BAS(Breach & Attack Simulation) 기반 시나리오를 통해  
+APT 분석, 취약점 리서치, BAS(Breach & Attack Simulation) 시나리오를 통해  
 **공격을 이해하고 재현하여 방어 가능한 보안 자산으로 전환**하는 것을 목표로 합니다.
 
 ---
@@ -8,8 +8,8 @@ APT 분석, 취약점 리서치, BAS(Breach & Attack Simulation) 기반 시나�
 ## About (Summary)
 
 **노경록 | Security Threat Analyst**  
-APT 공격 시나리오 분석 및 자동화, 1-Day 취약점 PoC 분석/리팩토링, CIS Benchmark 점검 자동화를 수행해왔습니다.  
-실제 환경에서 재현 가능한 시뮬레이션 자산을 구축하고, 공격 흐름을 방어 관점으로 전환하는 문서화에 집중합니다.
+APT 공격 시나리오 분석/자동화, 1-Day 취약점 PoC 검증 및 리팩토링, CIS Benchmark 점검 자동화를 수행했습니다.  
+실전 환경에서 재현 가능한 시뮬레이션 자산을 구축하고, 공격 흐름을 방어 관점의 문서로 전환하는 데 강점이 있습니다.
 
 - **현 직장**: 쏘마(Somma) RedBlue 연구원 (2024.01 ~ 재직 중)
 - **핵심 역량**: APT 시나리오 자산화, PoC 검증/자동화, BAS 시뮬레이션 설계
@@ -41,12 +41,12 @@ APT 공격 시나리오 분석 및 자동화, 1-Day 취약점 PoC 분석/리팩�
 ## Featured Scenarios
 
 ### APT-Analysis
-- [OilRig DB 백업 유출 시나리오](/APT-Analysis/OilRig/Scenario-DB-Backup-Exfil.md)
-- [Lazarus 도메인 정책 기반 인프라 장악 시나리오](/APT-Analysis/Lazarus/Scenario-Domain-Policy-PMS.md)
+- [OilRig DB 백업 유출 시나리오](APT-Analysis/OilRig/Scenario-DB-Backup-Exfil.md)
+- [Lazarus 도메인 정책 기반 인프라 장악 시나리오](APT-Analysis/Lazarus/Scenario-Domain-Policy-PMS.md)
 
 ### BAS-Simulation
-- [Visual Studio 취약점 기반 개발 인프라 감염 시나리오](/BAS-Simulation/Scenarios/Scenario-Visual-Studio-Infection.md)
-- [CIS Benchmark 점검 시나리오](/BAS-Simulation/Scenarios/Scenario-CIS-Benchmark-Audit.md)
+- [Visual Studio 취약점 기반 개발 인프라 감염 시나리오](BAS-Simulation/Scenarios/Scenario-Visual-Studio-Infection.md)
+- [CIS Benchmark 점검 시나리오](BAS-Simulation/Scenarios/Scenario-CIS-Benchmark-Audit.md)
 
 ---
 
