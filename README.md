@@ -47,6 +47,33 @@ APT 공격 시나리오 분석/자동화, 1-Day 취약점 PoC 검증 및 리팩�
 ### BAS-Simulation
 - [Visual Studio 취약점 기반 개발 인프라 감염 시나리오](BAS-Simulation/Scenarios/Scenario-Visual-Studio-Infection.md)
 - [CIS Benchmark 점검 시나리오](BAS-Simulation/Scenarios/Scenario-CIS-Benchmark-Audit.md)
+- [Qilin SafeMode 우회 시나리오](BAS-Simulation/Scenarios/Scenario-Qilin-SafeMode.md)
+- [SideWinder DLL Sideloading 시나리오](BAS-Simulation/Scenarios/Scenario-SideWinder-DLL-Sideloading.md)
+- [Git Credential 탈취 탐지 시나리오](BAS-Simulation/Scenarios/Scenario-Git-Credential-Theft.md)
+
+### Malware Analysis
+- [LockBit 2.0 랜섬웨어 분석](Malware-Analysis/LockBit-2.0/README.md) — Ghidra 정적 분석, IOC/YARA Rule
+
+### Exploit PoC / Tools
+- [SNEK BlueWarHammer](CVE-Research/SNEK-BlueWarHammer/README.md) — Windows Defender LPE (SAM 유출 → SYSTEM)
+- [Chrome Password Recovery](Tools/Chrome-Password-Recovery.md) — Chrome v10/v20 자격증명 복구 (Go)
+- [CVE-Scanner](Tools/CVE-Scanner.md) — NVD 기반 시스템 취약점 스캐너
+- [hping3 Static Builder](Tools/hping3-Static-Builder.md) — Docker 기반 정적 빌드
+
+---
+
+## Tech Blog
+
+MITRE ATT&CK 프레임워크 기반으로 공격 기법을 분석하고, **탐지/대응 방안(Sigma Rule 포함)**까지 정리한 기술 블로그입니다.  
+현재 **10개 Tactic, 32개 기법**을 다루고 있습니다. → [전체 목록 보기](TechBlog/README.md)
+
+**주요 기법 (Featured)**
+- [T1003.001 — LSASS Memory Dump](TechBlog/Credential-Access/T1003.001-LSASS-Memory-Dump.md)
+- [T1055 — Process Injection](TechBlog/Defense-Evasion/T1055-Process-Injection.md)
+- [T1548.002 — Bypass UAC](TechBlog/Privilege-Escalation/T1548.002-Bypass-UAC.md)
+- [T1550.002 — Pass the Hash](TechBlog/Lateral-Movement/T1550.002-Pass-the-Hash.md)
+- [T1572 — Protocol Tunneling](TechBlog/Command-and-Control/T1572-Protocol-Tunneling.md)
+- [DKOM — Direct Kernel Object Manipulation](TechBlog/Defense-Evasion/DKOM.md)
 
 ---
 
@@ -57,7 +84,9 @@ portfolio-root
 ├─ About               # 이력/경력/자기소개
 ├─ APT-Analysis        # APT 그룹별 분석 및 캠페인 정리
 ├─ BAS-Simulation      # 공격 시나리오 기반 시뮬레이션
-├─ CVE-Research        # 취약점 분석 및 방어 관점 문서
-├─ Tools               # 분석/자동화를 위한 보조 도구
+├─ Malware-Analysis    # 악성코드 정적/동적 분석 보고서
+├─ CVE-Research        # 취약점 분석, Exploit PoC
+├─ TechBlog            # MITRE ATT&CK 기반 기술 블로그 (32개 기법)
+├─ Tools               # 보안 분석/자동화 도구 (CVE-Scanner, CPR, hping3)
 └─ docs                # 학습/기록 문서
 ```

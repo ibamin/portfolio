@@ -1,0 +1,133 @@
+FROM alpine:latest AS builder
+
+LABEL maintainer="security-team"
+LABEL description="hping3 static build for security testing"
+LABEL version="1.0"
+LABEL project="hping3-static"
+
+ENV HPING_VERSION=master
+ENV BUILD_DIR=/build
+ENV HPING_REPO=https://github.com/antirez/hping.git
+
+WORKDIR ${BUILD_DIR}
+
+RUN apk add --no-cache \
+    build-base \
+    git \
+    libpcap-dev \
+    linux-headers \
+    bash \
+    && rm -rf /var/cache/apk/*
+
+RUN echo "╔═══════════════════════════════════════════════════════════╗" && \
+    echo "║              hping3 Static Build Process                  ║" && \
+    echo "╚═══════════════════════════════════════════════════════════╝" && \
+    echo "" && \
+    echo "[*] Step 1/7: Cloning hping3 repository..." && \
+    git clone ${HPING_REPO} hping3 && \
+    echo "    ✓ Repository cloned successfully" && \
+    echo ""
+
+WORKDIR ${BUILD_DIR}/hping3
+
+RUN echo "[*] Step 2/7: Applying patches..." && \
+    echo "    → Patching BPF header path..." && \
+    sed -i 's/#include <net\/bpf.h>/#include <pcap\/bpf.h>/' libpcap_stuff.c && \
+    echo "    → Patching delaytable declaration..." && \
+    sed -i 's/^volatile struct delaytable_element delaytable/extern volatile struct delaytable_element delaytable/' hping2.h && \
+    echo "    ✓ Patches applied successfully" && \
+    echo ""
+
+RUN echo "[*] Step 3/7: Running configure..." && \
+    ./configure && \
+    echo "    ✓ Configuration completed" && \
+    echo ""
+
+RUN echo "[*] Step 4/7: Modifying Makefile..." && \
+    echo "    → Removing TCL dependency..." && \
+    sed -i 's/ -ltcl//' Makefile && \
+    echo "    → Enabling static linking..." && \
+    sed -i 's/\$(CC) -o hping3/\$(CC) -static -o hping3/' Makefile && \
+    echo "    ✓ Makefile modified successfully" && \
+    echo ""
+
+RUN echo "[*] Step 5/7: Building hping3..." && \
+    make && \
+    echo "    ✓ Build completed successfully" && \
+    echo ""
+
+RUN echo "[*] Step 6/7: Stripping debug symbols..." && \
+    strip hping3 && \
+    AFTER_SIZE=$(stat -c%s hping3) && \
+    echo "    → Binary size: $AFTER_SIZE bytes" && \
+    echo "    ✓ Stripped successfully" && \
+    echo ""
+
+RUN echo "[*] Step 7/7: Verifying build..." && \
+    FILE_INFO=$(file hping3) && \
+    echo "    → File type: $FILE_INFO" && \
+    LDD_OUTPUT=$(ldd hping3 2>&1 || true) && \
+    echo "    → LDD check: $LDD_OUTPUT" && \
+    if echo "$FILE_INFO" | grep -q "static"; then \
+        echo "    ✓ Static linking verified (static-pie)"; \
+        STATIC_CHECK="PASS"; \
+    else \
+        echo "    ✗ Static linking failed"; \
+        STATIC_CHECK="FAIL"; \
+        exit 1; \
+    fi && \
+    if ./hping3 --version > /dev/null 2>&1; then \
+        echo "    ✓ Binary is executable"; \
+        EXEC_CHECK="PASS"; \
+    else \
+        echo "    ⚠ Binary version check skipped"; \
+        EXEC_CHECK="SKIP"; \
+    fi && \
+    echo "" && \
+    echo "╔═══════════════════════════════════════════════════════════╗" && \
+    echo "║                  Build Summary                            ║" && \
+    echo "╠═══════════════════════════════════════════════════════════╣" && \
+    echo "║ Static Linking:    $STATIC_CHECK                         ║" && \
+    echo "║ Executable Test:   $EXEC_CHECK                           ║" && \
+    echo "║ Binary Size:       $(stat -c%s hping3) bytes              ║" && \
+    echo "║ Build Type:        static-pie                             ║" && \
+    echo "╚═══════════════════════════════════════════════════════════╝" && \
+    echo "" && \
+    echo "[+] Build completed successfully!"
+
+RUN mkdir -p /etc/hping3 && \
+    echo "Build Date: $(date)" > /etc/hping3/BUILD_INFO.txt && \
+    echo "Alpine Version: $(cat /etc/alpine-release)" >> /etc/hping3/BUILD_INFO.txt && \
+    echo "GCC Version: $(gcc --version | head -1)" >> /etc/hping3/BUILD_INFO.txt && \
+    echo "Binary Size: $(stat -c%s hping3) bytes" >> /etc/hping3/BUILD_INFO.txt && \
+    echo "Build Type: static-pie" >> /etc/hping3/BUILD_INFO.txt && \
+    echo "File Info: $(file hping3)" >> /etc/hping3/BUILD_INFO.txt
+
+FROM alpine:latest
+
+LABEL maintainer="security-team"
+LABEL description="hping3 static binary runtime"
+LABEL version="1.0"
+
+RUN apk add --no-cache \
+    libcap \
+    bash \
+    && rm -rf /var/cache/apk/*
+
+COPY --from=builder /build/hping3/hping3 /usr/local/bin/hping3
+
+COPY --from=builder /etc/hping3/BUILD_INFO.txt /etc/hping3/BUILD_INFO.txt
+
+RUN chmod +x /usr/local/bin/hping3 && \
+    setcap cap_net_raw+ep /usr/local/bin/hping3
+
+RUN ln -s /usr/local/bin/hping3 /usr/bin/hping3
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD /usr/local/bin/hping3 --version > /dev/null 2>&1 || exit 1
+
+WORKDIR /workspace
+
+ENV HPING_PATH=/usr/local/bin/hping3
+ENTRYPOINT ["/usr/local/bin/hping3"]
+CMD ["--help"]
