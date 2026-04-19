@@ -8,9 +8,9 @@
 
 | 도구 | 언어 | 용도 | 플랫폼 | 다운로드 |
 |------|------|------|--------|----------|
-| [CVE-Scanner](CVE-Scanner.md) | Go | NVD 기반 시스템 취약점 스캐너 | Windows / Linux | <a href="/downloads/cveScanner-window.exe" class="badge badge-blue">Win</a> <a href="/downloads/cveScanner-linux" class="badge badge-green">Linux</a> |
-| [Chrome Password Recovery](Chrome-Password-Recovery.md) | Go | Chrome 저장 자격증명 복구 (BAS용) | Windows | <a href="/downloads/cpr_fix.exe" class="badge badge-blue">Win</a> |
-| [hping3 Static Builder](hping3-Static-Builder.md) | Docker / Alpine | 정적 링크 hping3 빌드 시스템 | Linux | <a href="/downloads/hping3_static" class="badge badge-green">Linux</a> |
+| [CVE-Scanner](Tools/CVE-Scanner.md) | Go | NVD 기반 시스템 취약점 스캐너 | Windows / Linux | <a href="downloads/cveScanner-window.exe" class="badge badge-blue">Win</a> <a href="downloads/cveScanner-linux" class="badge badge-green">Linux</a> |
+| [Chrome Password Recovery](Tools/Chrome-Password-Recovery.md) | Go | Chrome 저장 자격증명 복구 (BAS용) | Windows | <a href="downloads/cpr_fix.exe" class="badge badge-blue">Win</a> |
+| [hping3 Static Builder](Tools/hping3-Static-Builder.md) | Docker / Alpine | 정적 링크 hping3 빌드 시스템 | Linux | <a href="downloads/hping3_static" class="badge badge-green">Linux</a> |
 
 ---
 

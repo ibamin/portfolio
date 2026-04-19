@@ -16,7 +16,7 @@
 
 | 문서 | 핵심 내용 | ATT&CK |
 |------|-----------|--------|
-| [Ransomware Trend Analysis](Ransomware-Trend-Analysis.md) | 랜섬웨어 트렌드 변화, 금융권 공급망 공격 사례, 7단계 공격 분석, Cheiron 25 Procedures | T1486, T1490, T1562.001, T1112 |
+| [Ransomware Trend Analysis](APT-Analysis/Qilin/Ransomware-Trend-Analysis.md) | 랜섬웨어 트렌드 변화, 금융권 공급망 공격 사례, 7단계 공격 분석, Cheiron 25 Procedures | T1486, T1490, T1562.001, T1112 |
 
 ---
 
