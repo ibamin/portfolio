@@ -11,6 +11,15 @@
 | [CVE-Scanner](Tools/CVE-Scanner.md) | Go | NVD 기반 시스템 취약점 스캐너 | Windows / Linux | <a href="downloads/cveScanner-window.exe" class="badge badge-blue">Win</a> <a href="downloads/cveScanner-linux" class="badge badge-green">Linux</a> |
 | [Chrome Password Recovery](Tools/Chrome-Password-Recovery.md) | Go | Chrome 저장 자격증명 복구 (BAS용) | Windows | <a href="downloads/cpr_fix.exe" class="badge badge-blue">Win</a> |
 | [hping3 Static Builder](Tools/hping3-Static-Builder.md) | Docker / Alpine | 정적 링크 hping3 빌드 시스템 | Linux | <a href="downloads/hping3_static" class="badge badge-green">Linux</a> |
+| [BlueHammer (CVE-2026-33825)](CVE-Research/CVE-2026-33825/README.md) | C++ | Windows Defender LPE — SAM 유출 → SYSTEM 셸 | Windows | <a href="downloads/SNEK_BlueWarHammer.exe" class="badge badge-blue">Win</a> <a href="https://github.com/atroubledsnake/SNEK_Blue-War-Hammer" class="badge badge-purple">Source</a> |
+
+---
+
+## License & Disclaimer
+
+본 페이지의 모든 공개 도구는 **MIT License** 하에 배포되며, **보안 연구 및 교육 목적**으로만 제공됩니다.
+
+도구의 오용, 손해, 법적 결과에 대한 책임은 전적으로 **사용자에게** 있습니다. 본인 소유이거나 명시적 서면 허가를 받은 환경에서만 사용하십시오.
 
 ---
 
