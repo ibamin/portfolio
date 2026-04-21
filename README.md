@@ -55,7 +55,7 @@ APT 공격 시나리오 분석/자동화, 1-Day 취약점 PoC 검증 및 리팩�
 - [LockBit 2.0 랜섬웨어 분석](Malware-Analysis/LockBit-2.0/README.md) — Ghidra 정적 분석, IOC/YARA Rule
 
 ### Exploit PoC / Tools
-- [SNEK BlueWarHammer](CVE-Research/SNEK-BlueWarHammer/README.md) — Windows Defender LPE (SAM 유출 → SYSTEM)
+- [CVE-2026-33825 — BlueHammer](CVE-Research/CVE-2026-33825/README.md) — Windows Defender LPE (SAM 유출 → SYSTEM)
 - [Chrome Password Recovery](Tools/Chrome-Password-Recovery.md) — Chrome v10/v20 자격증명 복구 (Go)
 - [CVE-Scanner](Tools/CVE-Scanner.md) — NVD 기반 시스템 취약점 스캐너
 - [hping3 Static Builder](Tools/hping3-Static-Builder.md) — Docker 기반 정적 빌드

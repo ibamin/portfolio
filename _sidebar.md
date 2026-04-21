@@ -24,7 +24,7 @@
   - [LockBit 2.0](Malware-Analysis/LockBit-2.0/README.md)
 - **CVE Research**
   - [Overview](CVE-Research/README.md)
-  - [SNEK BlueWarHammer](CVE-Research/SNEK-BlueWarHammer/README.md)
+  - [CVE-2026-33825 — BlueHammer](CVE-Research/CVE-2026-33825/README.md)
 - **Tech Blog**
   - [Overview (32 Techniques)](TechBlog/README.md)
 - **Tools**
