@@ -1,4 +1,8 @@
 # Chrome Password Recovery
+<p class="doc-hero">
+  <img class="doc-hero-image" src="../assets/images/pexels-programming-6424584.jpg" alt="Programming code on screen" />
+  <span class="doc-hero-caption">Image: Nemuel Sereti / Pexels</span>
+</p>
 ## 구조 다이어그램
 
 ```mermaid

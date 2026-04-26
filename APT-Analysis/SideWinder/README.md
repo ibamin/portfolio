@@ -1,4 +1,8 @@
 # SideWinder APT Group
+<p class="doc-hero">
+  <img class="doc-hero-image" src="../../assets/images/pexels-cyber-binary-5473951.jpg" alt="Cybersecurity binary code projection" />
+  <span class="doc-hero-caption">Image: cottonbro studio / Pexels</span>
+</p>
 ## 구조 다이어그램
 
 ```mermaid

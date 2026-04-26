@@ -1,4 +1,8 @@
 # Red Team Simulation 개인 개발 설계서
+<p class="doc-hero">
+  <img class="doc-hero-image" src="../../../assets/images/pexels-server-racks-5480781.jpg" alt="Server racks in a data center" />
+  <span class="doc-hero-caption">Image: Brett Sayles / Pexels</span>
+</p>
 
 ## 프로젝트 개요
 게임 GUI를 활용한 공격 시뮬레이션 도구 개발 - 1인 개발자용 설계서
