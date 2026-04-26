@@ -29,7 +29,10 @@
   - [Overview](TechBlog/README.md)
   - [MITRE ATT&CK](TechBlog/MITRE-ATTACK/README.md)
   - [Reverse Engineering](TechBlog/Reversing/README.md)
-  - [Dreamhack rev-basic-0](TechBlog/Reversing/Dreamhack-rev-basic-0.md)
+    - [Dreamhack rev-basic-0](TechBlog/Reversing/Dreamhack-rev-basic-0.md)
+  - [Toolbox Notes](TechBlog/Toolbox/README.md)
+  - [Reversing Tools](TechBlog/Toolbox/Reversing-Tools.md)
+  - [GNS3](TechBlog/Toolbox/GNS3.md)
   - [Malware Notes](TechBlog/Malware-Analysis/README.md)
   - [Rust Security](TechBlog/Rust-Security/README.md)
 - **Tools**

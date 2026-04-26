@@ -62,19 +62,19 @@ APT 공격 시나리오 분석/자동화, 1-Day 취약점 PoC 검증 및 리팩�
 
 ---
 
+
 ## Tech Blog
 
-MITRE ATT&CK, 리버스 엔지니어링, 악성코드 분석 메모, Rust 보안 개발 학습을 분리해 정리하는 기술 블로그입니다.  
-현재 MITRE ATT&CK 기반 **10개 Tactic, 32개 기법**과 Dreamhack 리버싱 분석 노트를 다루고 있습니다. → [전체 목록 보기](TechBlog/README.md)
+MITRE ATT&CK, 리버스 엔지니어링, 도구 치트시트, 악성코드 분석 메모, Rust 보안 개발 학습을 분리해 정리하는 기술 블로그입니다.  
+Notion의 `나만의 기술 블로그` 구조를 기준으로 **12개 ATT&CK 전술, 60개 이상 기법/도구 노트**를 보강했습니다. → [전체 목록 보기](TechBlog/README.md)
 
 **주요 기법 (Featured)**
-- [Dreamhack rev-basic-0 분석 노트](TechBlog/Reversing/Dreamhack-rev-basic-0.md)
-- [T1003.001 — LSASS Memory Dump](TechBlog/MITRE-ATTACK/Credential-Access/T1003.001-LSASS-Memory-Dump.md)
-- [T1055 — Process Injection](TechBlog/MITRE-ATTACK/Defense-Evasion/T1055-Process-Injection.md)
-- [T1548.002 — Bypass UAC](TechBlog/MITRE-ATTACK/Privilege-Escalation/T1548.002-Bypass-UAC.md)
-- [T1550.002 — Pass the Hash](TechBlog/MITRE-ATTACK/Lateral-Movement/T1550.002-Pass-the-Hash.md)
-- [T1572 — Protocol Tunneling](TechBlog/MITRE-ATTACK/Command-and-Control/T1572-Protocol-Tunneling.md)
-- [DKOM — Direct Kernel Object Manipulation](TechBlog/MITRE-ATTACK/Defense-Evasion/DKOM.md)
+- [T1190 — Exploit Public-Facing Application](TechBlog/MITRE-ATTACK/Initial-Access/T1190-Exploit-Public-Facing-Application.md)
+- [T1547.001 — Registry Run Keys / Startup Folder](TechBlog/MITRE-ATTACK/Persistence/T1547.001-Registry-Run-Keys-Startup-Folder.md)
+- [T1562.001 — Disable or Modify Tools](TechBlog/MITRE-ATTACK/Defense-Evasion/T1562.001-Disable-or-Modify-Tools.md)
+- [T1041 — Exfiltration Over C2 Channel](TechBlog/MITRE-ATTACK/Exfiltration/T1041-Exfiltration-Over-C2-Channel.md)
+- [T1486 — Data Encrypted for Impact](TechBlog/MITRE-ATTACK/Impact/T1486-Data-Encrypted-for-Impact.md)
+- [Reversing Tools — GDB / WinDbg / Ghidra](TechBlog/Toolbox/Reversing-Tools.md)
 
 ---
 
@@ -87,11 +87,15 @@ portfolio-root
 ├─ BAS-Simulation      # 공격 시나리오 기반 시뮬레이션
 ├─ Malware-Analysis    # 악성코드 정적/동적 분석 보고서
 ├─ CVE-Research        # 취약점 분석, Exploit PoC
-├─ TechBlog            # MITRE ATT&CK, Reversing, Malware Notes, Rust Security
+├─ TechBlog            # MITRE ATT&CK, Reversing, Toolbox, Malware Notes, Rust Security
 │  ├─ MITRE-ATTACK
 │  ├─ Reversing
+│  ├─ Toolbox
 │  ├─ Malware-Analysis
 │  └─ Rust-Security
 ├─ Tools               # 보안 분석/자동화 도구 (CVE-Scanner, CPR, hping3)
 └─ Archive             # 과거 학습 자료와 보조 산출물
 ```
+
+
+

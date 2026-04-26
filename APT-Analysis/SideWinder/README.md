@@ -16,7 +16,7 @@
 
 | 문서 | 핵심 기법 | ATT&CK |
 |------|-----------|--------|
-| [Template Injection to Stealer](APT-Analysis/SideWinder/Template-Injection-Stealer.md) | Template Injection → HTA Downloader → DLL Side-Loading | T1221, T1574.002, T1053.005 |
+| [Template Injection to Stealer](Template-Injection-Stealer.md) | Template Injection → HTA Downloader → DLL Side-Loading | T1221, T1574.002, T1053.005 |
 
 ---
 

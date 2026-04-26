@@ -8,7 +8,8 @@
 
 ### MITRE ATT&CK
 
-MITRE ATT&CK 전술/기법을 기준으로 공격 동작 방식, 실습 관찰 포인트, 탐지/대응 방안을 정리합니다.
+MITRE ATT&CK 전술/기법을 기준으로 공격 동작 방식, 관찰 포인트, 탐지/대응 방안을 정리합니다.  
+Notion의 `나만의 기술 블로그`에 있던 Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Command and Control, Exfiltration, Impact 항목을 반영했습니다.
 
 - [MITRE ATT&CK 기술 노트](MITRE-ATTACK/README.md)
 
@@ -17,7 +18,16 @@ MITRE ATT&CK 전술/기법을 기준으로 공격 동작 방식, 실습 관찰 �
 Dreamhack, CTF, 교육용 바이너리 분석을 통해 정적 분석, 디컴파일러 검증, 조건 분기 추적, 런타임 검증 과정을 기록합니다.
 
 - [Reverse Engineering 노트](Reversing/README.md)
-- [Dreamhack rev-basic-0 분석 노트](Reversing/Dreamhack-rev-basic-0.md)
+
+대표 Writeup: [Dreamhack rev-basic-0 분석 노트](Reversing/Dreamhack-rev-basic-0.md)
+
+### Toolbox Notes
+
+Notion의 `도구 모음`에 있던 리버싱 도구와 네트워크 실습 환경 메모를 별도 섹션으로 분리했습니다.
+
+- [Toolbox Notes](Toolbox/README.md)
+- [Reversing Tools - GDB / WinDbg / Ghidra](Toolbox/Reversing-Tools.md)
+- [GNS3 네트워크 시뮬레이션](Toolbox/GNS3.md)
 
 ### Malware Analysis Notes
 
@@ -35,10 +45,9 @@ Rust 기반 보안 도구, 탐지 엔진, 시스템 프로그래밍 학습 내�
 
 ## Featured
 
-- [Dreamhack rev-basic-0 분석 노트](Reversing/Dreamhack-rev-basic-0.md)
-- [T1003.001 - LSASS Memory Dump](MITRE-ATTACK/Credential-Access/T1003.001-LSASS-Memory-Dump.md)
-- [T1055 - Process Injection](MITRE-ATTACK/Defense-Evasion/T1055-Process-Injection.md)
-- [T1548.002 - Bypass UAC](MITRE-ATTACK/Privilege-Escalation/T1548.002-Bypass-UAC.md)
-- [T1550.002 - Pass the Hash](MITRE-ATTACK/Lateral-Movement/T1550.002-Pass-the-Hash.md)
-- [T1572 - Protocol Tunneling](MITRE-ATTACK/Command-and-Control/T1572-Protocol-Tunneling.md)
-- [DKOM - Direct Kernel Object Manipulation](MITRE-ATTACK/Defense-Evasion/DKOM.md)
+- [T1190 - Exploit Public-Facing Application](MITRE-ATTACK/Initial-Access/T1190-Exploit-Public-Facing-Application.md)
+- [T1547.001 - Registry Run Keys / Startup Folder](MITRE-ATTACK/Persistence/T1547.001-Registry-Run-Keys-Startup-Folder.md)
+- [T1562.001 - Disable or Modify Tools](MITRE-ATTACK/Defense-Evasion/T1562.001-Disable-or-Modify-Tools.md)
+- [T1041 - Exfiltration Over C2 Channel](MITRE-ATTACK/Exfiltration/T1041-Exfiltration-Over-C2-Channel.md)
+- [T1486 - Data Encrypted for Impact](MITRE-ATTACK/Impact/T1486-Data-Encrypted-for-Impact.md)
+- [Reversing Tools - GDB / WinDbg / Ghidra](Toolbox/Reversing-Tools.md)

@@ -28,7 +28,7 @@
 
 | 문서 | 핵심 내용 |
 |------|-----------|
-| [LockBit 2.0 정적 분석 보고서](Malware-Analysis/LockBit-2.0/README.md) | Ghidra 기반 정적 분석, 암호화 흐름, IOC, YARA Rule |
+| [LockBit 2.0 정적 분석 보고서](../../Malware-Analysis/LockBit-2.0/README.md) | Ghidra 기반 정적 분석, 암호화 흐름, IOC, YARA Rule |
 
 ---
 
