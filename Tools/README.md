@@ -1,4 +1,14 @@
 # Tools
+## 구조 다이어그램
+
+```mermaid
+flowchart TD
+    Input["Input"] --> Collector["Collector/Parser"]
+    Collector --> Engine["Analysis Engine"]
+    Engine --> Output["Report/Artifact"]
+    Engine --> Rule["Detection Logic"]
+```
+
 
 보안 분석, 취약점 점검, 공격 시뮬레이션을 위해 개발한 도구 모음입니다.
 

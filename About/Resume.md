@@ -1,4 +1,14 @@
-﻿# Resume
+# Resume
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Profile["Resume"] --> Experience["경력과 역할"]
+    Experience --> Skills["보안 역량"]
+    Skills --> Evidence["프로젝트 증거"]
+    Evidence --> Direction["지원 방향"]
+```
+
 
 ## Profile
 - **Name**: 노경록 (Nho KyungLock)

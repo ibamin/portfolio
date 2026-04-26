@@ -1,4 +1,14 @@
 # BAS Scenarios
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Hypothesis["시나리오 가설"] --> Emulation["공격 에뮬레이션"]
+    Emulation --> Telemetry["로그 수집"]
+    Telemetry --> Detection["탐지 검증"]
+    Detection --> Hardening["개선/하드닝"]
+```
+
 
 BAS(Breach & Attack Simulation) 기반 공격 시나리오 목록입니다.  
 각 시나리오는 **공격 흐름 → 시뮬레이션 커맨드 → 탐지(Sigma/YARA Rule) → 대응 방안** 구조로 작성되었습니다.

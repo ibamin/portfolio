@@ -1,4 +1,14 @@
-﻿# Statement
+# Statement
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Profile["Statement"] --> Experience["경력과 역할"]
+    Experience --> Skills["보안 역량"]
+    Skills --> Evidence["프로젝트 증거"]
+    Evidence --> Direction["지원 방향"]
+```
+
 
 ## 성장과정
 고등학교 시절, 우연히 시사 프로그램에서 Anonymous 사례를 접한 뒤 보안 분야에 흥미를 갖게 되었고, 화이트해커라는 목표를 세웠습니다. 이후 학업에 다시 몰입하여 정보보호 트랙이 있는 호서대학교 컴퓨터공학부에 진학했습니다.

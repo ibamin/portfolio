@@ -1,4 +1,15 @@
-﻿# Lazarus 도메인 정책 기반 인프라 장악 시나리오
+# Lazarus 도메인 정책 기반 인프라 장악 시나리오
+## 구조 다이어그램
+
+```mermaid
+flowchart TD
+    Intel["위협 인텔리전스"] --> Actor["Lazarus 도메인 정책 기반 인프라 장악 시나리오"]
+    Actor --> TTP["TTP 분석"]
+    TTP --> Scenario["공격 시나리오"]
+    Scenario --> Detection["탐지 포인트"]
+    Detection --> Response["대응/완화"]
+```
+
 
 ## 개요
 Lazarus 그룹의 공격 흐름을 가정하여, 그룹 정책과 PMS를 활용한 인프라 장악 과정을 재현하는 시나리오입니다.

@@ -1,4 +1,14 @@
 # Reverse Engineering
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Binary["대상 바이너리"] --> Static["정적 분석"]
+    Static --> Debug["동적 디버깅"]
+    Debug --> Logic["핵심 로직 파악"]
+    Logic --> Writeup["Write-up"]
+```
+
 
 Dreamhack, CTF, 교육용 바이너리 분석을 통해 정적 분석, 디컴파일러 검증, 조건 분기 추적, 런타임 검증 과정을 기록합니다.
 

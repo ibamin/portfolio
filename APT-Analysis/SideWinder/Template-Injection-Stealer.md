@@ -1,4 +1,15 @@
 # Sidewinder APT 그룹 공격 분석 — Template Injection to Stealer
+## 구조 다이어그램
+
+```mermaid
+flowchart TD
+    Intel["위협 인텔리전스"] --> Actor["Sidewinder APT 그룹 공격 분석 — Template Injection to Stealer"]
+    Actor --> TTP["TTP 분석"]
+    TTP --> Scenario["공격 시나리오"]
+    Scenario --> Detection["탐지 포인트"]
+    Detection --> Response["대응/완화"]
+```
+
 
 ## 개요
 

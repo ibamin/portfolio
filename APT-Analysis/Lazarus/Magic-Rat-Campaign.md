@@ -1,4 +1,15 @@
-﻿# Lazarus Magic Rat Campaign (분석 요약)
+# Lazarus Magic Rat Campaign (분석 요약)
+## 구조 다이어그램
+
+```mermaid
+flowchart TD
+    Intel["위협 인텔리전스"] --> Actor["Lazarus Magic Rat Campaign (분석 요약)"]
+    Actor --> TTP["TTP 분석"]
+    TTP --> Scenario["공격 시나리오"]
+    Scenario --> Detection["탐지 포인트"]
+    Detection --> Response["대응/완화"]
+```
+
 
 ## Overview
 - **기간**: 2024-10-18 → 2024-10-31

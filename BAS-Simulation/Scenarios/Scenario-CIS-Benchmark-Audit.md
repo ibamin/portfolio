@@ -1,4 +1,14 @@
-﻿# CIS Benchmark 점검 시나리오
+# CIS Benchmark 점검 시나리오
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Hypothesis["시나리오 가설"] --> Emulation["공격 에뮬레이션"]
+    Emulation --> Telemetry["로그 수집"]
+    Telemetry --> Detection["탐지 검증"]
+    Detection --> Hardening["개선/하드닝"]
+```
+
 
 ## 개요
 CIS Benchmark 기준을 기반으로 Apache/IIS 보안 점검 항목을 자동화하고, 반복 가능한 점검 시나리오로 구성한 문서입니다.

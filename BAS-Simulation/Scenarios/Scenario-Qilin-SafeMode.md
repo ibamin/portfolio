@@ -1,4 +1,14 @@
 # Qilin 랜섬웨어 Safe Mode 우회 시나리오
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Hypothesis["시나리오 가설"] --> Emulation["공격 에뮬레이션"]
+    Emulation --> Telemetry["로그 수집"]
+    Telemetry --> Detection["탐지 검증"]
+    Detection --> Hardening["개선/하드닝"]
+```
+
 
 ## 개요
 

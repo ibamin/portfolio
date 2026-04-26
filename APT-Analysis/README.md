@@ -1,4 +1,15 @@
 # APT-Analysis
+## 구조 다이어그램
+
+```mermaid
+flowchart TD
+    Intel["위협 인텔리전스"] --> Actor["APT-Analysis"]
+    Actor --> TTP["TTP 분석"]
+    TTP --> Scenario["공격 시나리오"]
+    Scenario --> Detection["탐지 포인트"]
+    Detection --> Response["대응/완화"]
+```
+
 
 APT 그룹별 자료를 모아둔 폴더입니다.
 

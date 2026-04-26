@@ -1,4 +1,14 @@
 # hping3 Static Binary Builder
+## 구조 다이어그램
+
+```mermaid
+flowchart TD
+    Input["Input"] --> Collector["Collector/Parser"]
+    Collector --> Engine["Analysis Engine"]
+    Engine --> Output["Report/Artifact"]
+    Engine --> Rule["Detection Logic"]
+```
+
 
 <a href="downloads/hping3_static" class="download-btn">Linux Static Binary</a>
 <a href="downloads/hping3-Dockerfile" class="download-btn">Dockerfile</a>

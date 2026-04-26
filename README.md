@@ -1,4 +1,17 @@
-﻿# Security Research & Defense Portfolio
+# Security Research & Defense Portfolio
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Home["Portfolio Home"] --> About["About"]
+    Home --> APT["APT Analysis"]
+    Home --> BAS["BAS Simulation"]
+    Home --> CVE["CVE Research"]
+    Home --> Malware["Malware Analysis"]
+    Home --> Tech["Tech Blog"]
+    Home --> Tools["Tools"]
+```
+
 
 APT 분석, 취약점 리서치, BAS(Breach & Attack Simulation) 시나리오를 통해  
 **공격을 이해하고 재현하여 방어 가능한 보안 자산으로 전환**하는 것을 목표로 합니다.

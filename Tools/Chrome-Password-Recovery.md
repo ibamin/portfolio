@@ -1,4 +1,14 @@
 # Chrome Password Recovery
+## 구조 다이어그램
+
+```mermaid
+flowchart TD
+    Input["Input"] --> Collector["Collector/Parser"]
+    Collector --> Engine["Analysis Engine"]
+    Engine --> Output["Report/Artifact"]
+    Engine --> Rule["Detection Logic"]
+```
+
 
 <a href="downloads/cpr_fix.exe" class="download-btn">Windows (x64)</a>
 

@@ -1,4 +1,14 @@
-﻿# Visual Studio 취약점 기반 개발 인프라 감염 시나리오
+# Visual Studio 취약점 기반 개발 인프라 감염 시나리오
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Hypothesis["시나리오 가설"] --> Emulation["공격 에뮬레이션"]
+    Emulation --> Telemetry["로그 수집"]
+    Telemetry --> Detection["탐지 검증"]
+    Detection --> Hardening["개선/하드닝"]
+```
+
 
 ## 개요
 유출된 WebHook을 이용해 악성 Visual Studio 프로젝트를 배포하고, 취약점(CVE-2024-20656)을 통해 NT\SYSTEM 권한을 획득하는 시나리오입니다.

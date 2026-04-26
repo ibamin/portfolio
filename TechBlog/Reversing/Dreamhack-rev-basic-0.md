@@ -1,4 +1,14 @@
 # Dreamhack rev-basic-0 분석 노트
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Binary["대상 바이너리"] --> Static["정적 분석"]
+    Static --> Debug["동적 디버깅"]
+    Debug --> Logic["핵심 로직 파악"]
+    Logic --> Writeup["Write-up"]
+```
+
 
 ## 개요
 

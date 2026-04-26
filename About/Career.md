@@ -1,4 +1,14 @@
-﻿# Career Highlights
+# Career Highlights
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Profile["Career Highlights"] --> Experience["경력과 역할"]
+    Experience --> Skills["보안 역량"]
+    Skills --> Evidence["프로젝트 증거"]
+    Evidence --> Direction["지원 방향"]
+```
+
 
 ## 주요 프로젝트 1 — OilRig 내부 관계 기반 DB 백업 유출 시나리오
 **목표**: 내부망 침투 후 DB 백업 파일 탈취 시나리오 설계

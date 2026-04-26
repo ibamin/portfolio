@@ -1,4 +1,14 @@
 # Tech Blog
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Topic["Tech Blog"] --> Concept["핵심 개념"]
+    Concept --> Practice["실습/분석"]
+    Practice --> Notes["정리"]
+    Notes --> Reuse["재사용 가능한 기준"]
+```
+
 
 보안 연구 과정에서 정리한 기술 블로그입니다. 공격 기법을 단순히 나열하지 않고, 분석 근거와 방어 관점의 대응으로 연결하는 것을 목표로 합니다.
 

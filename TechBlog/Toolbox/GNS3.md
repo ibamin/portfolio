@@ -1,4 +1,14 @@
 # GNS3 네트워크 시뮬레이션
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Goal["분석 목표"] --> Tool["도구 선택"]
+    Tool --> Setup["환경 구성"]
+    Setup --> Workflow["작업 흐름"]
+    Workflow --> Output["결과 정리"]
+```
+
 
 Notion의 `Network > GNS3` 내용을 기반으로 정리한 네트워크 실습 환경 메모입니다.
 

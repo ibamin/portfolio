@@ -1,4 +1,14 @@
 # Rust Security
+## 구조 다이어그램
+
+```mermaid
+flowchart LR
+    Code["Rust 코드"] --> Ownership["소유권/수명"]
+    Ownership --> Unsafe["unsafe/FFI 경계"]
+    Unsafe --> Review["보안 검토"]
+    Review --> Hardening["하드닝"]
+```
+
 
 Rust 기반 보안 도구, 탐지 엔진, 시스템 프로그래밍 학습 내용을 정리하는 공간입니다.
 

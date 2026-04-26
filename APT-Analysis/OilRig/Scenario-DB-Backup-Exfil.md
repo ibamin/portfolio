@@ -1,4 +1,15 @@
-﻿# OilRig DB 백업 유출 시나리오
+# OilRig DB 백업 유출 시나리오
+## 구조 다이어그램
+
+```mermaid
+flowchart TD
+    Intel["위협 인텔리전스"] --> Actor["OilRig DB 백업 유출 시나리오"]
+    Actor --> TTP["TTP 분석"]
+    TTP --> Scenario["공격 시나리오"]
+    Scenario --> Detection["탐지 포인트"]
+    Detection --> Response["대응/완화"]
+```
+
 
 ## 개요
 OilRig 그룹 내부 관계 기반 침투 후 DB 백업 파일을 탈취하는 시나리오입니다.  
