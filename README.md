@@ -68,6 +68,7 @@ MITRE ATT&CK 프레임워크 기반으로 공격 기법을 분석하고, **탐�
 현재 **10개 Tactic, 32개 기법**을 다루고 있습니다. → [전체 목록 보기](TechBlog/README.md)
 
 **주요 기법 (Featured)**
+- [Dreamhack rev-basic-0 분석 노트](TechBlog/Dreamhack-rev-basic-0.md)
 - [T1003.001 — LSASS Memory Dump](TechBlog/Credential-Access/T1003.001-LSASS-Memory-Dump.md)
 - [T1055 — Process Injection](TechBlog/Defense-Evasion/T1055-Process-Injection.md)
 - [T1548.002 — Bypass UAC](TechBlog/Privilege-Escalation/T1548.002-Bypass-UAC.md)

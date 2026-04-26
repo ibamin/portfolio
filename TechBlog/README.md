@@ -1,5 +1,8 @@
 # Tech Blog
 
+## Reverse Engineering
+- [Dreamhack rev-basic-0 분석 노트](Dreamhack-rev-basic-0.md)
+
 MITRE ATT&CK 프레임워크 기반으로 공격 기법을 분석하고, 탐지/대응 방안까지 정리한 기술 블로그입니다.  
 각 기법은 **개요 → 동작 방식 → 실습 → 탐지(Sigma Rule) → 대응 방안** 구조로 작성되었습니다.
 

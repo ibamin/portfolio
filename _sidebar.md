@@ -27,6 +27,7 @@
   - [CVE-2026-33825 — BlueHammer](CVE-Research/CVE-2026-33825/README.md)
 - **Tech Blog**
   - [Overview (32 Techniques)](TechBlog/README.md)
+  - [Dreamhack rev-basic-0](TechBlog/Dreamhack-rev-basic-0.md)
 - **Tools**
   - [Overview](Tools/README.md)
   - [CVE-Scanner](Tools/CVE-Scanner.md)
