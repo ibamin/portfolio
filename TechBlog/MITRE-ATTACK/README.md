@@ -73,11 +73,17 @@ MITRE ATT&CK 전술과 기법을 기준으로 공격 동작 방식, 관찰 포�
 - [T1560.001 - Archive via Utility](Collection/T1560.001-Archive-via-Utility.md)
 
 ## Command and Control
+- [DCOM](Command-and-Control/DCOM.md)
+- [PSEXEC](Command-and-Control/PSEXEC.md)
+- [SC](Command-and-Control/SC.md)
+- [Scheduler](Command-and-Control/Scheduler.md)
 - [T1071.001 - Web Protocols](Command-and-Control/T1071.001-Web-Protocols.md)
 - [T1090.003 - Multi-hop Proxy](Command-and-Control/T1090.003-Multi-hop-Proxy.md)
 - [T1105 - Ingress Tool Transfer](Command-and-Control/T1105-Ingress-Tool-Transfer.md)
 - [T1132.001 - Standard Encoding](Command-and-Control/T1132.001-Standard-Encoding.md)
 - [T1572 - Protocol Tunneling](Command-and-Control/T1572-Protocol-Tunneling.md)
+- [WINRM](Command-and-Control/WINRM.md)
+- [WMIC](Command-and-Control/WMIC.md)
 
 ## Exfiltration
 - [T1020 - Automated Exfiltration](Exfiltration/T1020-Automated-Exfiltration.md)
