@@ -362,6 +362,44 @@
   <body>
     <div id="app">Loading...</div>
     <script>
+      (function () {
+        var routeAliases = {
+          'MITRE-ATTACK/': 'TechBlog/MITRE-ATTACK/',
+          'Initial-Access/': 'TechBlog/MITRE-ATTACK/Initial-Access/',
+          'Execution/': 'TechBlog/MITRE-ATTACK/Execution/',
+          'Persistence/': 'TechBlog/MITRE-ATTACK/Persistence/',
+          'Privilege-Escalation/': 'TechBlog/MITRE-ATTACK/Privilege-Escalation/',
+          'Defense-Evasion/': 'TechBlog/MITRE-ATTACK/Defense-Evasion/',
+          'Credential-Access/': 'TechBlog/MITRE-ATTACK/Credential-Access/',
+          'Discovery/': 'TechBlog/MITRE-ATTACK/Discovery/',
+          'Lateral-Movement/': 'TechBlog/MITRE-ATTACK/Lateral-Movement/',
+          'Collection/': 'TechBlog/MITRE-ATTACK/Collection/',
+          'Command-and-Control/': 'TechBlog/MITRE-ATTACK/Command-and-Control/',
+          'Exfiltration/': 'TechBlog/MITRE-ATTACK/Exfiltration/',
+          'Impact/': 'TechBlog/MITRE-ATTACK/Impact/',
+          'Defense/': 'TechBlog/MITRE-ATTACK/Defense/',
+          'Reversing/': 'TechBlog/Reversing/',
+          'Toolbox/': 'TechBlog/Toolbox/'
+        };
+
+        function normalizeHashRoute() {
+          var raw = window.location.hash || '';
+          var route = raw.replace(/^#\/?/, '');
+
+          Object.keys(routeAliases).some(function (prefix) {
+            if (route.indexOf(prefix) !== 0) {
+              return false;
+            }
+
+            window.location.replace('#/' + routeAliases[prefix] + route.slice(prefix.length));
+            return true;
+          });
+        }
+
+        window.addEventListener('hashchange', normalizeHashRoute);
+        normalizeHashRoute();
+      })();
+
       window.$docsify = {
         name: '<span style="background:linear-gradient(135deg,#58a6ff,#7ee787);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Security Portfolio</span>',
         repo: 'https://github.com/ibamin/portfolio',
